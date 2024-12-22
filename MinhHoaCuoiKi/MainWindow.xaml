@@ -1,0 +1,103 @@
+﻿<Window x:Class="MinhHoaCuoiKi.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MinhHoaCuoiKi"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="796" Width="800" Loaded="Window_Loaded">
+    <Grid>
+        <!-- Title -->
+        <TextBlock Text="QUẢN LÝ HỌC SINH" FontSize="24" FontWeight="Bold" Foreground="Green" 
+                   HorizontalAlignment="Center" Margin="0,10,0,0" />
+
+        <!-- Form -->
+        <StackPanel Orientation="Vertical" Margin="20,60,20,0">
+            <Grid Margin="0,10,0,10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="150" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Text="Mã học sinh:" VerticalAlignment="Center" />
+                <TextBox Grid.Column="1" Name="txtMaHocSinh" Margin="5" />
+            </Grid>
+
+            <Grid Margin="0,10,0,10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="150" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Text="Họ tên:" VerticalAlignment="Center" />
+                <TextBox Grid.Column="1" Name="txtHoTen" Margin="5" />
+            </Grid>
+
+            <Grid Margin="0,10,0,10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="150" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Text="Ngày sinh:" VerticalAlignment="Center" />
+                <DatePicker Grid.Column="1" Name="dpNgaySinh" Margin="5" />
+            </Grid>
+
+            <Grid Margin="0,10,0,10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="150" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Text="Giới tính:" VerticalAlignment="Center" />
+                <StackPanel Grid.Column="1" Orientation="Horizontal">
+                    <RadioButton Content="Nam" Name="rbNam" Margin="0,0,10,0" IsChecked="True" />
+                    <RadioButton Content="Nữ" Name="rbNu" />
+                </StackPanel>
+            </Grid>
+
+            <Grid Margin="0,10,0,10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="150" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Text="Con thương binh liệt sỹ:" VerticalAlignment="Center" />
+                <CheckBox Grid.Column="1" Name="cbConThuongBinh" Margin="5" />
+            </Grid>
+
+            <Grid Margin="0,10,0,10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="150" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Text="Lớp:" VerticalAlignment="Center" />
+                <ComboBox Grid.Column="1" Name="cbLop" Margin="5" SelectedIndex="0">
+                    <ComboBoxItem Content="Chuyên Hóa 1" />
+                    <ComboBoxItem Content="Chuyên Toán 1" />
+                    <ComboBoxItem Content="Chuyên Lý 1" />
+                </ComboBox>
+            </Grid>
+        </StackPanel>
+
+        <!-- DataGrid -->
+        <DataGrid Name="dgHocSinh" Margin="20,355,20,50" AutoGenerateColumns="False" ColumnHeaderStyle="{StaticResource styleColumnHeader}">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Mã học sinh" Binding="{Binding MaHs}" />
+                <DataGridTextColumn Header="Họ tên" Binding="{Binding HoTen}" />
+                <DataGridTextColumn Header="Ngày sinh" Binding="{Binding NgaySinh}" />
+                <DataGridTextColumn Header="Giới tính" Binding="{Binding GioiTinh}" />
+                <DataGridTextColumn Header="Con thương binh liệt sỹ" Binding="{Binding ConThuongBinh}" />
+                <DataGridTextColumn Header="Tên lớp" Binding="{Binding TenLop}" />
+                <DataGridTextColumn Header="Tuổi" Binding="{Binding Tuoi}" Width="*" CellStyle="{StaticResource stylCell}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <!-- Buttons -->
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,10">
+            <Button Content="Thêm" Width="100" Margin="5" Click="Button_Click" />
+            <Button Content="Thống kê" Width="100" Margin="5" Click="Button_Click_1" />
+        </StackPanel>
+    </Grid>
+</Window>
