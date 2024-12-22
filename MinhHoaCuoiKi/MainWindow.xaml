@@ -73,11 +73,7 @@
                 </Grid.ColumnDefinitions>
 
                 <TextBlock Text="Lớp:" VerticalAlignment="Center" />
-                <ComboBox Grid.Column="1" Name="cbLop" Margin="5" SelectedIndex="0">
-                    <ComboBoxItem Content="Chuyên Hóa 1" />
-                    <ComboBoxItem Content="Chuyên Toán 1" />
-                    <ComboBoxItem Content="Chuyên Lý 1" />
-                </ComboBox>
+                <ComboBox Grid.Column="1" Name="cbLop" Margin="5" SelectedIndex="0"/>
             </Grid>
         </StackPanel>
 
@@ -86,11 +82,11 @@
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Mã học sinh" Binding="{Binding MaHs}" />
                 <DataGridTextColumn Header="Họ tên" Binding="{Binding HoTen}" />
-                <DataGridTextColumn Header="Ngày sinh" Binding="{Binding NgaySinh}" />
+                <DataGridTextColumn Header="Ngày sinh" Binding="{Binding NgaySinh}" CellStyle="{StaticResource stylCell}"/>
                 <DataGridTextColumn Header="Giới tính" Binding="{Binding GioiTinh}" />
                 <DataGridTextColumn Header="Con thương binh liệt sỹ" Binding="{Binding ConThuongBinh}" />
                 <DataGridTextColumn Header="Tên lớp" Binding="{Binding TenLop}" />
-                <DataGridTextColumn Header="Tuổi" Binding="{Binding Tuoi}" Width="*" CellStyle="{StaticResource stylCell}"/>
+                <DataGridTextColumn Header="Tuổi" Binding="{Binding Tuoi}" Width="*" />
             </DataGrid.Columns>
         </DataGrid>
 
